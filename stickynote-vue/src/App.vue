@@ -32,7 +32,6 @@ const newMemo = ref("")
   <div v-if="showForm" class="form-overlay">
     <div class="form-modal">
       <button @click="showForm = false" class="form-close-btn">&times;</button>
-      {{ newMemo }}
       <textarea v-model="newMemo" name="memo" id="memo" cols="30" rows="10"></textarea>
       <button class="form-save-btn">Save</button>
     </div>
