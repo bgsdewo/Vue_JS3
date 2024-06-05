@@ -3,9 +3,14 @@ import { ref } from 'vue';
 const showForm = ref(false)
 const newMemo = ref("")
 const memos = ref([])
+const errorMessage = ref("")
 
 
 function addMemo() {
+  if(!newMemo.value) {
+    errorMessage.value = "Please enter a memo"
+    return
+  }
   memos.value.push({
     id:Date.now(),
     memo:newMemo.value,
@@ -27,7 +32,6 @@ function getRandomColor() {
 
 <template>
  <main>
-  {{ memos }}
   <div class="container">
     <header>
       <h1 class="header-title">Memo</h1>
@@ -43,6 +47,7 @@ function getRandomColor() {
   <div v-if="showForm" class="form-overlay">
     <div class="form-modal">
       <button @click="showForm = false" class="form-close-btn">&times;</button>
+      <em v-if="errorMessage" class="form-error">{{ errorMessage }}</em>
       <textarea v-model="newMemo" name="memo" id="memo" cols="30" rows="10"></textarea>
       <button @click="addMemo" class="form-save-btn">Save</button>
     </div>
@@ -147,5 +152,9 @@ header {
   border: none;
   font-size: 25px;
   cursor: pointer;
+}
+
+.form-error {
+  color: red;
 }
 </style>  
