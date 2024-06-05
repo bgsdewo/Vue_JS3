@@ -1,0 +1,5 @@
+bedanya ref dengan reactiv pada composition API adalah
+ketika kita menggunakan tipe data primitve seperti string,number,boolean itu kita pakenya ref 
+sedangkan reactiv gunakan saat menggunakan tipe data non primitve seperti array dan objek
+
+
