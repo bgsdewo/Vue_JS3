@@ -34,21 +34,9 @@ function getRandomColor() {
       <button @click="showForm = true" class="header-button">+</button>
     </header>
     <div class="card-container">
-      <div class="card">
-        <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, rerum.</p>
-        <p class="card-date">12/12/2024</p>
-      </div>
-      <div class="card">
-        <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, rerum.</p>
-        <p class="card-date">12/12/2024</p>
-      </div>
-      <div class="card">
-        <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, rerum.</p>
-        <p class="card-date">12/12/2024</p>
-      </div>
-      <div class="card">
-        <p class="card-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, rerum.</p>
-        <p class="card-date">12/12/2024</p>
+      <div v-for="(memo, index) in memos" :key="index" class="card" :style="{backgroundColor:memo.backgroundColor}">
+        <p class="card-content">{{ memo.memo}}</p>
+        <p class="card-date">{{ memo.date}}</p>
       </div>
     </div>
   </div>
@@ -160,4 +148,4 @@ header {
   font-size: 25px;
   cursor: pointer;
 }
-</style>
+</style>  
