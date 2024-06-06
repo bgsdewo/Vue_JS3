@@ -1,16 +1,24 @@
+<script setup>
+import { ref } from "vue";
+import srcQuiz from "./data/quizes.json"
+
+const quizes = ref(srcQuiz)
+console.log(quizes)
+</script>
+
+
 <template>
-  
   <main>
     <header>
       <h1 id="title">QuizVue</h1>
       <input type="text" id="search-input"/>
     </header>
     <section id="quiz-container">
-      <div class="card">
+      <div v-for="(quiz, index) in quizes" :key="index" class="card">
         <div class="card-body">
-          <img src="./assets/img/progamming.jpg" alt="">
-          <h2>Progamming</h2>
-          <p>2 Questions</p>
+          <img :src="quiz.img" :alt="quiz.title" class="card-img"> <!-- Menambahkan class "card-img" -->
+          <h2>{{ quiz.title }}</h2>
+          <p>{{ quiz.questions.length }}</p>
         </div>
       </div>
     </section>
@@ -20,7 +28,7 @@
 
 <style scoped>
 main {
-  max-width: 1200px;
+  max-width: 900px;
   margin:0 auto
 }
 
@@ -50,22 +58,22 @@ header {
 }
 
 .card {
-  width: 1000px;
+  width: 270px;
   margin-right: 30px;
+  margin-bottom: 30px;
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  margin: 0;
+  width: 100%; /* Menyesuaikan lebar gambar dengan lebar parent (kotak kartu) */
+  height: auto; /* Mengatur tinggi gambar agar proporsional */
+  object-fit: cover; /* Memastikan gambar terpotong sesuai dengan dimensi yang ditetapkan */
 }
 
 .card-body {
-  padding: 0 15px;
+padding:0 15px;
 }
 
 .card-body h2 {
