@@ -28,7 +28,7 @@ watch(search, () =>{
           <p>{{ quiz.questions.length }}</p>
         </div>
       </div> --> 
-      <QuizCard v-for="(quiz,index) in quizes" :key="index" />
+      <QuizCard v-for="(quiz,index) in quizes" :key="index" :quiz="quiz"/>
     </section>
   </main>
 </template>
