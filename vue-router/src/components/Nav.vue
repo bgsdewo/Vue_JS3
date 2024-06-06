@@ -7,8 +7,8 @@ import {RouterLink} from "vue-router"
         <a href="/">Home</a>
         <a href="/about">About</a>
         |
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink active-class="active" to="/">Home</RouterLink>
+        <RouterLink active-class="active" to="/about">About</RouterLink>
     </div>
 </template>
 
@@ -17,5 +17,14 @@ import {RouterLink} from "vue-router"
     div {
         display: flex;
         gap: 10px;
+    }
+
+    .active {
+        font-weight: 900;
+        color:white;
+        background-color: red;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
     }
 </style>
