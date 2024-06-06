@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from "vue";
 import srcQuiz from "./data/quizes.json"
+import QuizCard  from "./components/QuizCard.vue"
 
 const quizes = ref(srcQuiz)
 const search = ref("")
@@ -20,13 +21,14 @@ watch(search, () =>{
       <input v-model.trim="search" type="text" id="search-input"/>
     </header>
     <section id="quiz-container">
-      <div v-for="(quiz, index) in quizes" :key="index" class="card">
+      <!-- <div v-for="(quiz, index) in quizes" :key="index" class="card">
         <div class="card-body">
-          <img :src="quiz.img" :alt="quiz.title" class="card-img"> <!-- Menambahkan class "card-img" -->
-          <h2>{{ quiz.title }}</h2>
+          <img :src="quiz.img" :alt="quiz.title" class="card-img"> nambahkan class "card-img" -->
+          <!-- <h2>{{ quiz.title }}</h2>
           <p>{{ quiz.questions.length }}</p>
         </div>
-      </div>
+      </div> --> 
+      <QuizCard v-for="(quiz,index) in quizes" :key="index" />
     </section>
   </main>
 </template>
@@ -63,26 +65,4 @@ header {
   margin-top: 20px;
 }
 
-.card {
-  width: 270px;
-  margin-right: 30px;
-  margin-bottom: 30px;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.card-img {
-  width: 100%; /* Menyesuaikan lebar gambar dengan lebar parent (kotak kartu) */
-  height: auto; /* Mengatur tinggi gambar agar proporsional */
-  object-fit: cover; /* Memastikan gambar terpotong sesuai dengan dimensi yang ditetapkan */
-}
-
-.card-body {
-padding:0 15px;
-}
-
-.card-body h2 {
-  font-weight: bold;
-}
 </style>
