@@ -7,8 +7,13 @@ const { owner } = products.find((product) => product.id === parseInt(route.param
 </script>
 
 <template>
-    <div>
+    <div v-if="owner">
         <h1>Owner</h1>
-      <h2>{{ owner.name }} - {{ owner.email }}</h2>
+      <p>{{ owner.name }}</p>
+      <p>{{ owner.email }}</p>
+    </div>
+
+    <div v-else>
+        <p>Owner not found</p>
     </div>
 </template>
