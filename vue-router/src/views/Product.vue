@@ -1,6 +1,6 @@
 <script setup>
 
-import { useRoute } from 'vue-router';
+import { useRoute, RouterView } from 'vue-router';
 import products from "../data/products.json"
 const route = useRoute()
 const product = products.find((product) => product.id === parseInt(route.params.id))
@@ -14,4 +14,5 @@ const product = products.find((product) => product.id === parseInt(route.params.
       <h2>{{ product.name }} - {{ product.price }}</h2>
         <p>Year: {{ product.year }}</p>
     </div>
+    <RouterView />
 </template>

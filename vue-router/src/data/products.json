@@ -1,63 +1,102 @@
- [
-      {
-        "id": 1,
-        "name": "Product A",
-        "price": 100,
-        "year": 2023
-      },
-      {
-        "id": 2,
-        "name": "Product B",
-        "price": 150,
-        "year": 2022
-      },
-      {
-        "id": 3,    
-        "name": "Product C",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 4,
-        "name": "Product D",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 5,
-        "name": "Product E",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 6,
-        "name": "Product F",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 7,
-        "name": "Product G",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 8,
-        "name": "Product H",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 9,
-        "name": "Product I",
-        "price": 200,
-        "year": 2024
-      },
-      {
-        "id": 10,
-        "name": "Product J",
-        "price": 200,
-        "year": 2024
-      }
-
-    ]
+[
+  {
+    "id": 1,
+    "name": "Product A",
+    "price": 100,
+    "year": 2023,
+    "owner": {
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Product B",
+    "price": 150,
+    "year": 2022,
+    "owner": {
+      "name": "Jane Smith",
+      "email": "jane@example.com"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Product C",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "James Brown",
+      "email": "james@example.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Product D",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Emily Johnson",
+      "email": "emily@example.com"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Product E",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Michael Wilson",
+      "email": "michael@example.com"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Product F",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Emma Lee",
+      "email": "emma@example.com"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Product G",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Daniel Martinez",
+      "email": "daniel@example.com"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Product H",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Olivia Garcia",
+      "email": "olivia@example.com"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Product I",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "William Anderson",
+      "email": "william@example.com"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Product J",
+    "price": 200,
+    "year": 2024,
+    "owner": {
+      "name": "Sophia Taylor",
+      "email": "sophia@example.com"
+    }
+  }
+]
