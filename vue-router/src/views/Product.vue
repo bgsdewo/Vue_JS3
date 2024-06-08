@@ -1,9 +1,24 @@
 <script setup>
 
-import { useRoute, RouterView } from 'vue-router';
+import { useRoute, useRouter, RouterView } from 'vue-router'
 import products from "../data/products.json"
+
+
 const route = useRoute()
-const product = products.find((product) => product.id === parseInt(route.params.id))
+const router = useRouter()
+const productId = parseInt(route.params.id)
+
+
+const product = products.find((product) => product.id === productId)
+
+function showOwner() {
+  router.push({name: "owner", params: {id: productId}})
+}
+
+
+
+
+
 </script>
 
 
@@ -14,5 +29,6 @@ const product = products.find((product) => product.id === parseInt(route.params.
       <h2>{{ product.name }} - {{ product.price }}</h2>
         <p>Year: {{ product.year }}</p>
     </div>
+    <button @click="showOwner">Show Owner</button>
     <RouterView />
 </template>
