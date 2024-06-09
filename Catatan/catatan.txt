@@ -8,3 +8,7 @@ jika kita membutuhkan interaksi dua arah yg saling mengikat maka gunakan lah v-m
 setiap saat kita melakukan v-for kita harus menggunakan :key,karena tugas dari atributte aadalh
 ketika kita ingin menghapus sebuah object: [object1,object2,object3]
 itu kita bisa menghapusnya tanpa harus merender ulang
+
+
+perbeddaan computed dengan watch adalah ketika kita menggunakan ref kita cocok menggunakan computed
+tapi kalo kita ingin mengambil/mentriger suatu data kita bagusnya pake watch
