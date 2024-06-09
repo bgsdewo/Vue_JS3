@@ -1,6 +1,7 @@
 <script setup>
 import QuizHeader from '@/components/QuizHeader.vue'
 import QuizContent from '@/components/QuizContent.vue'
+import QuizResult from '@/components/QuizResult.vue'
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router';
 import quizes from '../data/quizes.json'
@@ -13,6 +14,9 @@ const quiz = quizes.find((q) => q.id === quizId)
 
 const numberOfCorrectAnswer = ref(0)
 const currentQuestionIndex = ref(0)
+const showResult = ref(false)
+
+
 const questionPage = computed(() => {
     return `${currentQuestionIndex.value  + 1} / ${quiz.questions.length}`
 })
@@ -25,6 +29,10 @@ function onSelectOption(option) {
     if (option.correct) {
         numberOfCorrectAnswer.value++
     }
+    if(currentQuestionIndex.value === quiz.questions.length - 1) {
+        showResult.value = true
+        return
+    }
     currentQuestionIndex.value++
 }
 
@@ -35,8 +43,8 @@ function onSelectOption(option) {
 
 <template>
     <QuizHeader :questionPage="questionPage" :barPersentage="barPersentage"/>
-    <QuizContent :question="quiz.questions[currentQuestionIndex]" @selectOption="onSelectOption" />
-    <button @click="currentQuestionIndex++" :disabled="currentQuestionIndex === quiz.questions.length - 1">Next</button>
+    <QuizContent v-if="!showResult" :question="quiz.questions[currentQuestionIndex]" @selectOption="onSelectOption" />
+    <QuizResult v-else :quizQuestionsLength="quiz.questions.length" :numberOfCorrectAnswer="numberOfCorrectAnswer" />
 </template>
 
 <style scoped>
